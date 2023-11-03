@@ -27,6 +27,6 @@ enum Theme: String {
     }
     
     var mainColor: Color {
-        Color(rowValue)
+        Color(rawValue)
     }
 }
