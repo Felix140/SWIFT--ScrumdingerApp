@@ -25,11 +25,22 @@ struct MeetingView: View {
                 }
             }
             Circle()
-                .strokeBorder(lineWidth: 14)
+                .strokeBorder(lineWidth: 18)
             HStack {
+                Button(action: {}) {
+                    Image(systemName: "backward.fill")
+                        .foregroundColor(Color.black)
+                }
+                Spacer()
                 Text("Speaker 1 of 3")
+                Spacer()
+                Button(action: {}) {
+                    Image(systemName: "forward.fill")
+                        .foregroundColor(Color.black)
+                }
             }
         }
+        .padding()
     }
 }
 
