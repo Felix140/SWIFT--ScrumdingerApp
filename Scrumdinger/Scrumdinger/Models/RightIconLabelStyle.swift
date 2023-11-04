@@ -10,6 +10,7 @@ struct RightIconLabelStyle: LabelStyle {
     }
 }
 
+// ?
 extension LabelStyle where Self == RightIconLabelStyle{
     static var rightIcon: Self { Self() }
 }
