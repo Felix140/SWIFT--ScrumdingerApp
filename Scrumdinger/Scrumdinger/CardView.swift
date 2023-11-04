@@ -38,6 +38,7 @@ struct CardView: View {
 struct CardView_Previews: PreviewProvider {
     
     static var scrumm = DailyScrum.scrumData[1]
+    
     static var previews: some View {
         CardView(scrum: scrumm)
             .background(.yellow)
