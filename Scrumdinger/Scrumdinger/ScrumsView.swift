@@ -11,7 +11,7 @@ struct ScrumsView: View { //rappresenta la vista principale dell'applicazione.
     let scrums: [DailyScrum]
     
     var body: some View {
-        List(scrums, id: \.title) { element in
+        List(scrums) { element in
             //Text(row.title)
             CardView(scrum: element)
                 .listRowBackground(Color.yellow)
