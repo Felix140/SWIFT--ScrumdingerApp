@@ -11,10 +11,14 @@ struct ScrumsView: View { //rappresenta la vista principale dell'applicazione.
     let scrums: [DailyScrum]
     
     var body: some View {
-        List(scrums) { element in
-            //Text(row.title)
-            CardView(scrum: element)
-                .listRowBackground(Color.yellow)
+        NavigationStack {
+            List(scrums) { element in
+                NavigationLink(destination: Text(element.title)) {
+                    //Text(row.title)
+                    CardView(scrum: element)
+                        .listRowBackground(Color.yellow)
+                }
+            }
         }
     }
 }
