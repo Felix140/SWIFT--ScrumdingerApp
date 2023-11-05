@@ -16,9 +16,10 @@ struct ScrumsView: View { //rappresenta la vista principale dell'applicazione.
                 NavigationLink(destination: Text(element.title)) {
                     //Text(row.title)
                     CardView(scrum: element)
-                        .listRowBackground(Color.yellow)
                 }
+                .listRowBackground(Color.yellow)
             }
+            .navigationTitle("Daily Scrum")
         }
     }
 }
