@@ -20,6 +20,11 @@ struct ScrumsView: View { //rappresenta la vista principale dell'applicazione.
                 .listRowBackground(Color.yellow)
             }
             .navigationTitle("Daily Scrum")
+            .toolbar{
+                Button(action: {}) {
+                    Image(systemName: "plus")
+                }
+            }
         }
     }
 }
