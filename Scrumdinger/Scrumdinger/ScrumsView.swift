@@ -14,7 +14,7 @@ struct ScrumsView: View { //rappresenta la vista principale dell'applicazione.
         List(scrums, id: \.title) { element in
             //Text(row.title)
             CardView(scrum: element)
-                .listRowBackground(element.themeColor.mainColor)
+                .listRowBackground(Color.yellow)
         }
     }
 }

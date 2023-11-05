@@ -2,15 +2,25 @@ import Foundation
 
 // Modello
 struct DailyScrum {
+    let id: UUID // serve a identificare il singolo DailyScrum al momento del ciclo List in CardView
     var title: String
     var attendees: [String]
     var lengthInMinutes: Int
     var themeColor: Theme
+    
+//    aggiungo un INITIALAZER
+    init(id: UUID = UUID(), title: String, attendees: [String], lengthInMinutes: Int, themeColor: Theme) {
+        self.id = id // assegnare a "= UUID()"
+        self.title = title
+        self.attendees = attendees
+        self.lengthInMinutes = lengthInMinutes
+        self.themeColor = themeColor
+    }
 }
 
 extension DailyScrum {
     
-    static let scrumData: [DailyScrum] = [
+    static var scrumData: [DailyScrum] = [
         
     DailyScrum(
         title: "Programming",
