@@ -25,6 +25,7 @@ struct ScrumsView: View { //rappresenta la vista principale dell'applicazione.
                     Image(systemName: "plus")
                 }
             }
+            .accessibilityLabel("New Scrum")
         }
     }
 }
