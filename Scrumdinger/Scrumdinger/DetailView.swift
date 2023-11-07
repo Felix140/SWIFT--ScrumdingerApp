@@ -13,19 +13,26 @@ struct DetailView: View {
     var body: some View {
         List {
             Section(header: Text("Informazioni")) {
+//                Start Meeting
                 Label("Start Meeting", systemImage: "timer")
                     .font(.headline)
                     .foregroundColor(.accentColor)
                 
+//                Length
                 HStack {
                     Label("Length", systemImage: "clock")
                     Spacer()
                     Text("\(scrum.lengthInMinutes) minutes")
                 }
                 .accessibilityElement(children: .combine) // combine the Label and Text elements for accessibility users.
+                
+//                Length
                 HStack {
                     Label("Theme", systemImage: "paintpalette")
+                    Spacer()
+                    Text(scrum.themeColor.nameColor)
                 }
+                .accessibilityElement(children: .combine)
             }
         }
     }
