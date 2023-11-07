@@ -13,7 +13,7 @@ struct ScrumsView: View { //rappresenta la vista principale dell'applicazione.
     var body: some View {
         NavigationStack {
             List(scrums) { element in
-                NavigationLink(destination: Text(element.title)) {
+                NavigationLink(destination: DetailView(scrum: element)) {
                     //Text(row.title)
                     CardView(scrum: element)
                 }
