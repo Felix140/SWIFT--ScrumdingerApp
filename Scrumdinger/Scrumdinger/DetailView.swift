@@ -26,11 +26,15 @@ struct DetailView: View {
                 }
                 .accessibilityElement(children: .combine) // combine the Label and Text elements for accessibility users.
                 
-//                Length
+//                Theme
                 HStack {
                     Label("Theme", systemImage: "paintpalette")
                     Spacer()
                     Text(scrum.themeColor.nameColor)
+                        .padding(4)
+                        .foregroundColor(scrum.themeColor.accentColor)
+                        .background(Color.yellow) //to fix
+                        .cornerRadius(4)
                 }
                 .accessibilityElement(children: .combine)
             }
