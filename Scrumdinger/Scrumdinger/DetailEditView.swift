@@ -31,17 +31,13 @@ struct DetailEditView: View {
                     Button(action: {
                         withAnimation {
                             let attendee = DailyScrum.Attendee(name: newAttendeeName)
-                            
-                            if(newAttendeeName == "") {
-                                print("empty field")
-                            } else {
-                                scrum.attendees.append(attendee)
-                                newAttendeeName = ""
-                            }
+                            scrum.attendees.append(attendee)
+                            newAttendeeName = ""
                         }
                     }) {
                         Image(systemName: "plus.circle.fill")
                     }
+                    .disabled(newAttendeeName.isEmpty)
                 }
             }
         }
