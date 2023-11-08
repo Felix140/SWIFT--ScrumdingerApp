@@ -20,6 +20,22 @@ struct DailyScrum: Identifiable {
 
 extension DailyScrum {
     
+    struct Attendees: Identifiable {
+        let id: UUID
+        var name: String
+        
+        init(id: UUID, name: String) {
+            self.id = id
+            self.name = name
+        }
+    }
+    
+}
+
+
+
+extension DailyScrum {
+    
     static var scrumData: [DailyScrum] = [
         
     DailyScrum(
