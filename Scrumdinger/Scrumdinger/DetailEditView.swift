@@ -7,6 +7,11 @@ struct DetailEditView: View {
         Form {
             Section(header: Text("Meeting Info")) {
                 TextField("Title", text: $scrum.title) // the $ syntax create a binding to scrum.title
+                HStack {
+                    Slider(value: $scrum.lengthInMinutesAsDouble) {
+                        Text("Length")
+                    }
+                }
             }
         }
     }
