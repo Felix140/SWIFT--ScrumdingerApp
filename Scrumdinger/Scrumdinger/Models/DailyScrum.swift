@@ -4,7 +4,7 @@ import Foundation
 struct DailyScrum: Identifiable {
     let id: UUID // serve a identificare il singolo DailyScrum al momento del ciclo List in CardView
     var title: String
-    var attendees: [String]
+    var attendees: [Attendee]
     var lengthInMinutes: Int
     var themeColor: Theme
     
@@ -12,7 +12,7 @@ struct DailyScrum: Identifiable {
     init(id: UUID = UUID(), title: String, attendees: [String], lengthInMinutes: Int, themeColor: Theme) {
         self.id = id // assegnare a "= UUID()"
         self.title = title
-        self.attendees = attendees
+        self.attendees = attendees.map { Attendee(name: $0) }
         self.lengthInMinutes = lengthInMinutes
         self.themeColor = themeColor
     }
@@ -20,11 +20,11 @@ struct DailyScrum: Identifiable {
 
 extension DailyScrum {
     
-    struct Attendees: Identifiable {
+    struct Attendee: Identifiable {
         let id: UUID
         var name: String
         
-        init(id: UUID, name: String) {
+        init(id: UUID = UUID(), name: String) {
             self.id = id
             self.name = name
         }

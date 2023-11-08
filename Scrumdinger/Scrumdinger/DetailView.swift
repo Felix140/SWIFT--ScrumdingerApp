@@ -38,6 +38,12 @@ struct DetailView: View {
                 }
                 .accessibilityElement(children: .combine)
             }
+            
+            Section(header: Text("Partecipanti")) {
+                ForEach(scrum.attendees) { partecipante in
+                    Label(partecipante.name, systemImage: "person")
+                }
+            }
         }
     }
 }
