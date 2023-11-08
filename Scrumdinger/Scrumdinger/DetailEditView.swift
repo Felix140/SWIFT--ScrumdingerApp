@@ -4,7 +4,11 @@ struct DetailEditView: View {
     @State private var scrum = DailyScrum.emptyScrum // sono @State tutte le variabili MUTABILI (observed)
     
     var body: some View {
-        Text("Hello, World!")
+        Form {
+            Section(header: Text("Meeting Info")) {
+                
+            }
+        }
     }
 }
 
