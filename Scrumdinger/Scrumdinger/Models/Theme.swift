@@ -69,6 +69,6 @@ enum Theme: String {
     }
     
     var nameColor: String {
-        rawValue.capitalized
+        rawValue.capitalized // La funzione .capitalized trasforma la prima lettera di una stringa in maiuscolo e lascia le altre lettere in minuscolo.
     }
 }
