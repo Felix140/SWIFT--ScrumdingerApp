@@ -33,7 +33,7 @@ struct DetailView: View {
                     Text(scrum.themeColor.nameColor)
                         .padding(4)
                         .foregroundColor(scrum.themeColor.accentColor)
-                        .background(Color.yellow) //to fix
+                        .background(scrum.themeColor.mainColor) //to fix
                         .cornerRadius(4)
                 }
                 .accessibilityElement(children: .combine)

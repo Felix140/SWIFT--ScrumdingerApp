@@ -17,7 +17,7 @@ struct ScrumsView: View { //rappresenta la vista principale dell'applicazione.
                     //Text(row.title)
                     CardView(scrum: element)
                 }
-                .listRowBackground(Color.yellow)
+                .listRowBackground(element.themeColor.mainColor)
             }
             .navigationTitle("Daily Scrum")
             .toolbar{
