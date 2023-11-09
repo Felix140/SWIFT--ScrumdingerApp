@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DetailView: View {
     let scrum: DailyScrum
+    @State private var onShowEditView: Bool = false
     
     var body: some View {
         List {
@@ -50,6 +51,25 @@ struct DetailView: View {
             }
         }
         .navigationTitle(scrum.title)
+        // Apri la MODALE
+        .toolbar {
+            Button("Edit") {
+                onShowEditView = true
+            }
+        }
+        .sheet(isPresented: $onShowEditView) { // vuole come parametro "isPresented"
+            NavigationStack {
+                DetailEditView()
+                    .navigationTitle(scrum.title)
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button("Cancel") {
+                                onShowEditView = false
+                            }
+                        }
+                    }
+            }
+        }
     }
 }
 
