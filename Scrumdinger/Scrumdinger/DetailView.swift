@@ -51,7 +51,7 @@ struct DetailView: View {
             }
         }
         .navigationTitle(scrum.title)
-        // Apri la MODALE
+        // Apri la MODALE (.sheet)
         .toolbar {
             Button("Edit") {
                 onShowEditView = true
