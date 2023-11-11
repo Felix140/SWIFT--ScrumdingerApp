@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ScrumsView: View { //rappresenta la vista principale dell'applicazione.
-    let scrums: [DailyScrum]
+    @Binding var scrums: [DailyScrum]
     
     var body: some View {
         NavigationStack {
-            List(scrums) { element in
-                NavigationLink(destination: DetailView(scrum: element)) {
+            List($scrums) { $element in
+                NavigationLink(destination: DetailView(scrum: $element)) {
                     //Text(row.title)
                     CardView(scrum: element)
                 }
@@ -36,6 +36,6 @@ struct ScrumsView_Previews: PreviewProvider {
     
     static var previews: some View { //restituisce una o più anteprime della VIEW principale
         
-        ScrumsView(scrums: scrumss)
+        ScrumsView(scrums: .constant(DailyScrum.scrumData))
     }
 }

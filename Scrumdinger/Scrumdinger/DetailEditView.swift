@@ -1,7 +1,8 @@
 import SwiftUI
 
 struct DetailEditView: View {
-    @State private var scrum = DailyScrum.emptyScrum // sono @State tutte le variabili MUTABILI (observed)
+
+    @Binding var scrum: DailyScrum // scrum è ora un parametro di inizializzazione (no PRIVATE)
     @State private var newAttendeeName = "" // holds the attendee name that the user enters
     
     var body: some View {
@@ -18,6 +19,7 @@ struct DetailEditView: View {
                     Text("\(scrum.lengthInMinutes) minutes")
                         .accessibilityHidden(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                 }
+                ThemePicker(selection: $scrum.themeColor)
             }
             
             Section(header: Text("Partecipanti")) {
@@ -49,6 +51,6 @@ struct DetailEditView: View {
 
 struct DetailEditView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailEditView()
+        DetailEditView(scrum: .constant(DailyScrum.scrumData[0]))
     }
 }
