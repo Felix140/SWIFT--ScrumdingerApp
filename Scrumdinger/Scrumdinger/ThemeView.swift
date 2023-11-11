@@ -15,7 +15,7 @@ struct ThemeView: View {
             .frame(maxWidth: .infinity) // aggiungo la width a 100%
             .background(theme.mainColor)
             .foregroundColor(theme.accentColor)
-            .clipShape(RoundedRectangle(cornerRadius: 20)) // border radius
+            .clipShape(RoundedRectangle(cornerRadius: 10)) // border radius
     }
 }
 

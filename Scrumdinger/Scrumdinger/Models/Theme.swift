@@ -1,6 +1,6 @@
 import SwiftUI
 
-enum Theme: String {
+enum Theme: String, CaseIterable, Identifiable {
     
     case bubbleGum
     case butterCup
@@ -70,5 +70,9 @@ enum Theme: String {
     
     var nameColor: String {
         rawValue.capitalized // La funzione .capitalized trasforma la prima lettera di una stringa in maiuscolo e lascia le altre lettere in minuscolo.
+    }
+    
+    var id: String {
+        nameColor
     }
 }
