@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ThemeView: View {
     let theme: Theme
+    
     var body: some View {
         Text(theme.nameColor)
             .padding() // Aggiungo auto padding
