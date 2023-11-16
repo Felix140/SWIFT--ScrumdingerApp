@@ -36,6 +36,6 @@ struct ScrumsView_Previews: PreviewProvider {
     
     static var previews: some View { //restituisce una o più anteprime della VIEW principale
         
-        ScrumsView(scrums: .constant(DailyScrum.scrumData))
+        ScrumsView(scrums: .constant(scrumss))
     }
 }
