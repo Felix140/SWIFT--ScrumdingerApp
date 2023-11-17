@@ -36,13 +36,14 @@ struct MeetingFooterView: View {
                 } else {
                     Text("Speaker 1 of 3")
                     Spacer()
-                    Button(action: {}) {
+                    Button(action: skipAction) {
                         Image(systemName: "forward.fill")
                     }
                     .accessibilityLabel("Next Speaker")
                 }
             }
         }
+        .padding([.bottom, .horizontal])
     }
 }
 
