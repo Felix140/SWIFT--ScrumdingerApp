@@ -61,11 +61,11 @@
 				499DC2512AF5A7F8000D7CE8 /* CardView.swift */,
 				49FC33482AF4FE28004D55D3 /* MeetingView.swift */,
 				49F0F3292B076B6B002415F9 /* MeetingHeaderView.swift */,
+				49F0F32B2B077B51002415F9 /* ProgressBarStyle.swift */,
 				49FFDBA32AFEB4950003B34A /* ThemeView.swift */,
 				497BC43B2AFFEDEE00D88870 /* ThemePicker.swift */,
 				49DDAED52AFAA35100EFA56B /* DetailView.swift */,
 				49DA48A62AFBEB6100F7D709 /* DetailEditView.swift */,
-				49F0F32B2B077B51002415F9 /* ProgressBarStyle.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

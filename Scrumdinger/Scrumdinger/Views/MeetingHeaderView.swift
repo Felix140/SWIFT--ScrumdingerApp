@@ -34,6 +34,7 @@ struct MeetingHeaderView: View {
     var body: some View {
         VStack {
             ProgressView(value: progressBar)
+                .progressViewStyle(ProgressBarStyle(barTheme: theme))
             
             HStack {
                 VStack(alignment: .leading) {
