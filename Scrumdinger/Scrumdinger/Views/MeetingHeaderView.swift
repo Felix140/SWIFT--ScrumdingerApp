@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct MeetingHeaderView: View {
-    let secondsElapsed: Int = 10
-    let secondsRemaining: Int = 10
+    let secondsElapsed: Int
+    let secondsRemaining: Int
     
     //Totale dei secondi
     private var totalSeconds: Int {
@@ -56,7 +56,7 @@ struct MeetingHeaderView: View {
 
 struct MeetingHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        MeetingHeaderView()
+        MeetingHeaderView(secondsElapsed: 60, secondsRemaining: 180)
             .previewLayout(.sizeThatFits)  // dimensiona la View dal contenuto
     }
 }
