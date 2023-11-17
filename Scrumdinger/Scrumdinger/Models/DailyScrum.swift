@@ -51,20 +51,41 @@ extension DailyScrum {
     static var scrumData: [DailyScrum] = [
         
     DailyScrum(
-        title: "Programming",
+        title: "iOS Developer",
         attendees: ["Cathy", "Daisy", "Simon", "Jonathan"],
         lengthInMinutes: 10,
         themeColor: .yellow ),
     
-    DailyScrum(title: "App Dev",
+    DailyScrum(title: "App Developer",
                attendees: ["Katie", "Gray", "Euna", "Luis", "Darla"],
                lengthInMinutes: 5,
                themeColor: .orange ),
 
-    DailyScrum(title: "Web Dev",
+    DailyScrum(title: "Web Developer",
                attendees: ["Chella", "Chris", "Christina", "Eden", "Karla", "Lindsey", "Aga", "Chad", "Jenn", "Sarah"],
                lengthInMinutes: 5,
-               themeColor: .poppy )
+               themeColor: .poppy ),
+    
+    DailyScrum(title: "UX/UI Design",
+               attendees: ["Chella", "Chris", "Christina", "Eden", "Karla", "Lindsey", "Aga", "Chad", "Jenn", "Sarah"],
+               lengthInMinutes: 5,
+               themeColor: .magenta ),
+    
+    DailyScrum(title: "Data Scientist",
+               attendees: ["Lindsey", "Aga", "Chad", "Jenn", "Sarah"],
+               lengthInMinutes: 5,
+               themeColor: .seafoam ),
+    
+    DailyScrum(title: "Data Analyst",
+               attendees: ["Chella", "Chris", "Christina", "Eden", "Karla", "Lindsey", "Aga", "Chad", "Jenn", "Sarah"],
+               lengthInMinutes: 5,
+               themeColor: .bubbleGum ),
+    
+    DailyScrum(title: "AI Engineer",
+               attendees: ["Chella", "Chris", "Christina", "Eden", "Karla", "Lindsey", "Aga", "Chad", "Jenn", "Sarah"],
+               lengthInMinutes: 5,
+               themeColor: .sky )
+    
     
     ]
 }
