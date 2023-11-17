@@ -56,6 +56,13 @@ struct MeetingView: View {
         }
         .padding()
         .foregroundColor(meetScrum.themeColor.accentColor)
+        .onAppear {  /// LifeCycle Hook
+            scrumTimer.reset(lengthInMinutes: scrumTimer.lengthInMinutes, attendees: meetScrum.attendees)
+            scrumTimer.startScrum()
+        }
+        .onDisappear { /// LifeCycle Hook
+            scrumTimer.stopScrum()
+        }
         .navigationBarTitleDisplayMode(.inline) // Imposta la modalità di visualizzazione del titolo della barra di navigazione
     }
 }
