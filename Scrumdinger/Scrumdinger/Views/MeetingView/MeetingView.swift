@@ -14,7 +14,7 @@ struct MeetingView: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 16)
+            RoundedRectangle(cornerRadius: 16.0)
                 .fill(meetScrum.themeColor.mainColor)
             
             VStack {
@@ -22,35 +22,12 @@ struct MeetingView: View {
                 /// Header
                 MeetingHeaderView(secondsElapsed: scrumTimer.secondsElapsed, secondsRemaining: scrumTimer.secondsRemaining, theme: meetScrum.themeColor)
                 
-                ProgressView(value: 5, total: 15)
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text("Second Elapsed")
-                            .font(.caption)
-                        Label("300", systemImage: "hourglass.tophalf.fill")
-                    }
-                    Spacer()
-                    VStack(alignment: .trailing) {
-                        Text("Second Remaining")
-                            .font(.caption)
-                        Label("600", systemImage: "hourglass.tophalf.fill")
-                    }
-                }
-                .accessibilityElement(children: .ignore)
-                .accessibilityLabel("Time remaining")
-                .accessibilityValue("10 minutes")
-                
                 Circle()
-                    .strokeBorder(lineWidth: 18)
-                HStack {
-                    Text("Speaker 1 of 3")
-                    Spacer()
-                    Button(action: {}) {
-                        Image(systemName: "forward.fill")
-                            .foregroundColor(Color.black)
-                    }
-                    .accessibilityLabel(Text("Next"))
-                }
+                    .strokeBorder(lineWidth: 20)
+                
+                
+                /// Footer
+                MeetingFooterView(speakers: scrumTimer.speakers, skipAction: scrumTimer.skipSpeaker)
             }
             .padding()
         }
