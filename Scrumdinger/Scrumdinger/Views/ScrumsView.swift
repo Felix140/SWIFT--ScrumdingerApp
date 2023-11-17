@@ -37,5 +37,6 @@ struct ScrumsView_Previews: PreviewProvider {
     static var previews: some View { //restituisce una o più anteprime della VIEW principale
         
         ScrumsView(scrums: .constant(scrumss))
+        // (.constant) crea variabili con un valore costante che non cambia durante il ciclo di vita della vista
     }
 }
