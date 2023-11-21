@@ -10,7 +10,7 @@ import SwiftUI
 struct MeetingView: View {
     
     @Binding var meetScrum: DailyScrum
-    @StateObject var scrumTimer = ScrumTimer()
+    @StateObject var scrumTimer = ScrumTimer() /// SOURCE OF TRUTH
     
     var body: some View {
         ZStack {
@@ -19,14 +19,14 @@ struct MeetingView: View {
             
             VStack {
                 
-                /// Header
+                /// HEADER
                 MeetingHeaderView(secondsElapsed: scrumTimer.secondsElapsed, secondsRemaining: scrumTimer.secondsRemaining, theme: meetScrum.themeColor)
                 
                 Circle()
                     .strokeBorder(lineWidth: 20)
                 
                 
-                /// Footer
+                /// FOOTER
                 MeetingFooterView(speakers: scrumTimer.speakers, skipAction: scrumTimer.skipSpeaker)
             }
             .padding()
