@@ -1,6 +1,5 @@
 import SwiftUI
 
-
 struct MeetingFooterView: View {
     let speakers: [ScrumTimer.Speaker]
     var skipAction: ()->Void
@@ -16,6 +15,7 @@ struct MeetingFooterView: View {
         guard let speakerNumber = speakerNumber else { return "No more speakers" }
         return "Speaker \(speakerNumber) of \(speakers.count)"
     }
+    
     var body: some View {
         VStack {
             HStack {
@@ -24,13 +24,14 @@ struct MeetingFooterView: View {
                 } else {
                     Text(speakerText)
                     Spacer()
-                    Button(action: {}) {
+                    Button(action: skipAction) {
                         Image(systemName: "forward.fill")
                     }
                     .accessibilityLabel("Next speaker")
                 }
             }
         }
+        .padding([.bottom, .horizontal])
     }
 }
 

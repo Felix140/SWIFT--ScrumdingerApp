@@ -34,7 +34,7 @@ struct MeetingView: View {
         .padding()
         .foregroundColor(meetScrum.themeColor.accentColor)
         .onAppear {  /// LifeCycle Hook
-            scrumTimer.reset(lengthInMinutes: scrumTimer.lengthInMinutes, attendees: meetScrum.attendees)
+            scrumTimer.reset(lengthInMinutes: meetScrum.lengthInMinutes, attendees: meetScrum.attendees)
             scrumTimer.startScrum()
         }
         .onDisappear { /// LifeCycle Hook
