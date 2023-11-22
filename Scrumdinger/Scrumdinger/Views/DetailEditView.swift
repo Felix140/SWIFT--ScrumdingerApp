@@ -8,6 +8,7 @@ struct DetailEditView: View {
     var body: some View {
         Form {
             
+            // Sezione INFO
             Section(header: Text("Meeting Info")) {
                 TextField("Title", text: $scrum.title) // the $ syntax create a binding to scrum.title
                 HStack {
@@ -22,6 +23,7 @@ struct DetailEditView: View {
                 ThemePicker(selection: $scrum.themeColor)
             }
             
+            // Sezione PARTECIPANTI
             Section(header: Text("Partecipanti")) {
                 ForEach(scrum.attendees) { attendee in
                     Text(attendee.name)
