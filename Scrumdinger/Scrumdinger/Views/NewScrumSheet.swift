@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct NewScrumSheet: View {
+    
     @State private var newScrum = DailyScrum.emptyScrum
     @Binding var isPresentingNewScrumView: Bool
+    @Binding var addScrum: [DailyScrum]
     
     var body: some View {
         DetailEditView(scrum: $newScrum)
@@ -22,6 +24,7 @@ struct NewScrumSheet: View {
                 
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") {
+                        addScrum.append(newScrum)
                         isPresentingNewScrumView = false /// si chiude la modale
                     }
                 }
@@ -31,6 +34,6 @@ struct NewScrumSheet: View {
 
 struct NewScrumSheet_Previews: PreviewProvider {
     static var previews: some View {
-        NewScrumSheet(isPresentingNewScrumView: .constant(true))
+        NewScrumSheet(isPresentingNewScrumView: .constant(true), addScrum: .constant(DailyScrum.scrumData))
     }
 }
