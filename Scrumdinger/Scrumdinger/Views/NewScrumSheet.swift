@@ -13,6 +13,19 @@ struct NewScrumSheet: View {
     
     var body: some View {
         DetailEditView(scrum: $newScrum)
+            .toolbar { /// aggiunge i bottoni di edit dello .sheet (modale)
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Dismiss") {
+                        isPresentingNewScrumView = false /// si chiude la modale
+                    }
+                }
+                
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Done") {
+                        isPresentingNewScrumView = false /// si chiude la modale
+                    }
+                }
+            }
     }
 }
 

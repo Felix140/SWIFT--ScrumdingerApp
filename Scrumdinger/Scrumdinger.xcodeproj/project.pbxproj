@@ -64,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				49A61D882AF6E7BF0063149D /* ScrumsView.swift */,
+				4905C54C2B0E94510090F543 /* NewScrumSheet.swift */,
 				499DC2512AF5A7F8000D7CE8 /* CardView.swift */,
 				49CF25772B07C091009B92F5 /* MeetingView */,
 				49F0F32B2B077B51002415F9 /* ProgressBarStyle.swift */,
@@ -71,7 +72,6 @@
 				497BC43B2AFFEDEE00D88870 /* ThemePicker.swift */,
 				49DDAED52AFAA35100EFA56B /* DetailView.swift */,
 				49DA48A62AFBEB6100F7D709 /* DetailEditView.swift */,
-				4905C54C2B0E94510090F543 /* NewScrumSheet.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
