@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4905C54D2B0E94510090F543 /* NewScrumSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905C54C2B0E94510090F543 /* NewScrumSheet.swift */; };
 		4963BB602B07A806002C2227 /* ScrumTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4963BB5F2B07A806002C2227 /* ScrumTimer.swift */; };
 		497BC43C2AFFEDEE00D88870 /* ThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497BC43B2AFFEDEE00D88870 /* ThemePicker.swift */; };
 		499DC24E2AF59B8C000D7CE8 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DC24D2AF59B8C000D7CE8 /* Theme.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4905C54C2B0E94510090F543 /* NewScrumSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewScrumSheet.swift; sourceTree = "<group>"; };
 		4963BB5F2B07A806002C2227 /* ScrumTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumTimer.swift; sourceTree = "<group>"; };
 		497BC43B2AFFEDEE00D88870 /* ThemePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePicker.swift; sourceTree = "<group>"; };
 		499DC24D2AF59B8C000D7CE8 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				497BC43B2AFFEDEE00D88870 /* ThemePicker.swift */,
 				49DDAED52AFAA35100EFA56B /* DetailView.swift */,
 				49DA48A62AFBEB6100F7D709 /* DetailEditView.swift */,
+				4905C54C2B0E94510090F543 /* NewScrumSheet.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				499DC24E2AF59B8C000D7CE8 /* Theme.swift in Sources */,
 				49E463BB2AF5CFA300CCC871 /* RightIconLabelStyle.swift in Sources */,
 				49A61D892AF6E7BF0063149D /* ScrumsView.swift in Sources */,
+				4905C54D2B0E94510090F543 /* NewScrumSheet.swift in Sources */,
 				49FC33492AF4FE28004D55D3 /* MeetingView.swift in Sources */,
 				49FC33472AF4FE28004D55D3 /* ScrumdingerApp.swift in Sources */,
 				49FFDBA42AFEB4950003B34A /* ThemeView.swift in Sources */,
