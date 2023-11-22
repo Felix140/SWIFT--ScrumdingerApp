@@ -38,6 +38,7 @@ extension DailyScrum {
         }
     }
     
+    /// Modello Scrum VUOTO da aggiungere
     static var emptyScrum: DailyScrum {
         DailyScrum(title: "", attendees: [], lengthInMinutes: 5, themeColor: .sky)
     }

@@ -32,7 +32,7 @@ struct ScrumsView: View { //rappresenta la vista principale dell'applicazione.
         }
         .sheet(isPresented: $isPresentingNewScrumView) {
             NavigationStack {
-                NewScrumSheet()
+                NewScrumSheet(isPresentingNewScrumView: $isPresentingNewScrumView)
             }
         }
     }
