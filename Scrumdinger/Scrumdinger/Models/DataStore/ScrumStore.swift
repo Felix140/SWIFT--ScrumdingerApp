@@ -4,11 +4,12 @@ import Foundation
 /// delle sue proprietà @Published sta per cambiare. Qualsiasi vista che osserva un'istanza
 /// di ScrumStore verrà resa nuovamente quando il valore scrums cambia.
 
+@MainActor /// specifica che le funzioni asincrone intervengono nel main thread
 class ScrumStore: ObservableObject { /// ObservableObject: Questo è un protocollo in Swift utilizzato per identificare oggetti che possono essere osservati per cambiamenti.
     
     @Published var scrums: [DailyScrum] = [] /// @Published: Questo è un wrapper di proprietà in Swift utilizzato per contrassegnare una proprietà come osservabile.
     
-    private static func fileURL() -> URL {
+    private static func fileURL() throws -> URL {
         
         try FileManager.default.url(
             for: .documentDirectory,
@@ -18,4 +19,22 @@ class ScrumStore: ObservableObject { /// ObservableObject: Questo è un protocol
         
         .appendingPathComponent("scrum.data") /// ritorna l'URL del file chiamato "scrum.data"
     }
+    
+    
+    
+    
+    func load() async throws {
+        let task = Task<[DailyScrum], Error> {
+            let fileUrl = try Self.fileURL()
+            guard let data = try? Data(contentsOf: fileUrl) else {
+                return []
+            }
+            let dailyScrums = try JSONDecoder().decode([DailyScrum].self, from: data) /// DECODIFICA i dati dentro la costante locale dailyScrum
+            return dailyScrums
+        }
+        let scrumsResult = try await task.value /// assegna il valore asincrono a SCRUMS
+        self.scrums = scrumsResult
+    }
+    
+    
 }
