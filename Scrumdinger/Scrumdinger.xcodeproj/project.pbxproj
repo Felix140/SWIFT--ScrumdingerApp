@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4905C54D2B0E94510090F543 /* NewScrumSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905C54C2B0E94510090F543 /* NewScrumSheet.swift */; };
 		490A1E832B0FEF160025D82C /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490A1E822B0FEF160025D82C /* History.swift */; };
+		490A1E862B0FF31E0025D82C /* ScrumStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490A1E852B0FF31E0025D82C /* ScrumStore.swift */; };
 		4963BB602B07A806002C2227 /* ScrumTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4963BB5F2B07A806002C2227 /* ScrumTimer.swift */; };
 		497BC43C2AFFEDEE00D88870 /* ThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497BC43B2AFFEDEE00D88870 /* ThemePicker.swift */; };
 		499DC24E2AF59B8C000D7CE8 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DC24D2AF59B8C000D7CE8 /* Theme.swift */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		4905C54C2B0E94510090F543 /* NewScrumSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewScrumSheet.swift; sourceTree = "<group>"; };
 		490A1E822B0FEF160025D82C /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		490A1E852B0FF31E0025D82C /* ScrumStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumStore.swift; sourceTree = "<group>"; };
 		4963BB5F2B07A806002C2227 /* ScrumTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumTimer.swift; sourceTree = "<group>"; };
 		497BC43B2AFFEDEE00D88870 /* ThemePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePicker.swift; sourceTree = "<group>"; };
 		499DC24D2AF59B8C000D7CE8 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -62,6 +64,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		490A1E842B0FF2FF0025D82C /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				490A1E852B0FF31E0025D82C /* ScrumStore.swift */,
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
 		498445622B0124B500B27135 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +96,7 @@
 				49E463BA2AF5CFA300CCC871 /* RightIconLabelStyle.swift */,
 				4963BB5F2B07A806002C2227 /* ScrumTimer.swift */,
 				490A1E822B0FEF160025D82C /* History.swift */,
+				490A1E842B0FF2FF0025D82C /* DataStore */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -210,6 +221,7 @@
 				497BC43C2AFFEDEE00D88870 /* ThemePicker.swift in Sources */,
 				49F0F32C2B077B51002415F9 /* ProgressBarStyle.swift in Sources */,
 				49CF25792B07C0DF009B92F5 /* MeetingFooterView.swift in Sources */,
+				490A1E862B0FF31E0025D82C /* ScrumStore.swift in Sources */,
 				4963BB602B07A806002C2227 /* ScrumTimer.swift in Sources */,
 				499DC2502AF59D99000D7CE8 /* DailyScrum.swift in Sources */,
 				49DDAED62AFAA35100EFA56B /* DetailView.swift in Sources */,
