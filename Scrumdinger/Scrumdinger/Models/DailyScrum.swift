@@ -1,7 +1,7 @@
 import Foundation
 
 // Modello
-struct DailyScrum: Identifiable {
+struct DailyScrum: Identifiable, Codable {
     let id: UUID // serve a identificare il singolo DailyScrum al momento del ciclo List in CardView
     var title: String
     var attendees: [Attendee]
@@ -26,9 +26,11 @@ struct DailyScrum: Identifiable {
     }
 }
 
+
+
 extension DailyScrum {
     
-    struct Attendee: Identifiable {
+    struct Attendee: Identifiable, Codable {
         let id: UUID
         var name: String
         
