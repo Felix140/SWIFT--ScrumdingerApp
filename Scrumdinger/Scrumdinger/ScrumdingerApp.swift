@@ -14,16 +14,24 @@ struct ScrumdingerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ScrumsView(scrums: $store.scrums) // the initial view for the app.
-                .task { ///  caricherai i dati scrum dell'utente quando la vista root dell'app apparirà sullo schermo
-                    
-                    ///Caricare lo scrum salvato o interrompere l'esecuzione se load() genera un errore.
+            ScrumsView(scrums: $store.scrums) { /// the initial view for the app.
+                Task {
                     do {
-                        try await store.load()
+                        try await store.save(scrums: store.scrums)
                     } catch {
                         fatalError(error.localizedDescription)
                     }
                 }
+            }
+            .task { ///  caricherai i dati scrum dell'utente quando la vista root dell'app apparirà sullo schermo
+                
+                ///Caricare lo scrum salvato o interrompere l'esecuzione se load() genera un errore.
+                do {
+                    try await store.load()
+                } catch {
+                    fatalError(error.localizedDescription)
+                }
+            }
         }
     }
 }
