@@ -43,8 +43,8 @@ class ScrumStore: ObservableObject { /// ObservableObject: Questo è un protocol
             let data = try JSONEncoder().encode(scrums) /// codifica i dati
             let outfile = try Self.fileURL()
             try data.write(to: outfile)
-            _ = try await task.value /// Il carattere di sottolineatura indica che non sei interessato al risultato di task.value
         }
+        _ = try await task.value /// Il carattere di sottolineatura indica che non sei interessato al risultato di task.value
     }
     
     
