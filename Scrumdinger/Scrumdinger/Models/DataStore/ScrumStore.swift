@@ -21,7 +21,7 @@ class ScrumStore: ObservableObject { /// ObservableObject: Questo è un protocol
     }
     
     
-    
+    // LOAD data
     
     func load() async throws {
         let task = Task<[DailyScrum], Error> {
@@ -34,6 +34,17 @@ class ScrumStore: ObservableObject { /// ObservableObject: Questo è un protocol
         }
         let scrumsResult = try await task.value /// assegna il valore asincrono a SCRUMS
         self.scrums = scrumsResult
+    }
+    
+    // SAVE data
+    
+    func save(scrums: [DailyScrum]) async throws {
+        let task = Task {
+            let data = try JSONEncoder().encode(scrums) /// codifica i dati
+            let outfile = try Self.fileURL()
+            try data.write(to: outfile)
+            _ = try await task.value /// Il carattere di sottolineatura indica che non sei interessato al risultato di task.value
+        }
     }
     
     
