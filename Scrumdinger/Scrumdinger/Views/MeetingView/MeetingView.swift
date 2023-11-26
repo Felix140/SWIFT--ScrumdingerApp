@@ -14,6 +14,7 @@ struct MeetingView: View {
     @StateObject var scrumTimer = ScrumTimer() /// SOURCE OF TRUTH
     @StateObject var speechRecognizer = SpeechRecognizer() /// SOURCE OF TRUTH
     private var player: AVPlayer {AVPlayer.sharedDingPlayer}
+    @State var isRecording: Bool = false
     
     var body: some View {
         ZStack {
@@ -54,10 +55,16 @@ struct MeetingView: View {
             player.play()
         }
 
+        speechRecognizer.resetTranscript()
+        speechRecognizer.startTranscribing()
+        isRecording = true
+        scrumTimer.startScrum()
     }
     /// End LifeCycle
     private func endScrumm() {
         scrumTimer.stopScrum()
+        speechRecognizer.stopTranscribing()
+        isRecording = false
         
         let newHistory = History(attendees: meetScrum.attendees)
         meetScrum.history.insert(newHistory, at: 0)
