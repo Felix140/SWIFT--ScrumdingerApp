@@ -93,7 +93,6 @@
 				49DDAED52AFAA35100EFA56B /* DetailView.swift */,
 				49DA48A62AFBEB6100F7D709 /* DetailEditView.swift */,
 				49AB3ECF2B1126A70030E16E /* ErrorViews */,
-				49FBE6662B13BC7900C26675 /* SpeakerArc.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -132,11 +131,20 @@
 			isa = PBXGroup;
 			children = (
 				49FC33482AF4FE28004D55D3 /* MeetingView.swift */,
+				49FBE6682B13C15800C26675 /* MeetingComponents */,
+			);
+			path = MeetingView;
+			sourceTree = "<group>";
+		};
+		49FBE6682B13C15800C26675 /* MeetingComponents */ = {
+			isa = PBXGroup;
+			children = (
 				49F0F3292B076B6B002415F9 /* MeetingHeaderView.swift */,
 				49FBE6642B13B64B00C26675 /* MeetingTimerView.swift */,
 				49CF25782B07C0DE009B92F5 /* MeetingFooterView.swift */,
+				49FBE6662B13BC7900C26675 /* SpeakerArc.swift */,
 			);
-			path = MeetingView;
+			path = MeetingComponents;
 			sourceTree = "<group>";
 		};
 		49FC333A2AF4FE28004D55D3 = {
