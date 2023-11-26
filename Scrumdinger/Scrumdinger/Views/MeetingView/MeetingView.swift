@@ -27,7 +27,7 @@ struct MeetingView: View {
                 MeetingHeaderView(secondsElapsed: scrumTimer.secondsElapsed, secondsRemaining: scrumTimer.secondsRemaining, theme: meetScrum.themeColor)
                 
                 /// MEETING TIMER
-                MeetingTimerView(speakers: scrumTimer.speakers , theme: meetScrum.themeColor)
+                MeetingTimerView(speakers: scrumTimer.speakers, isRecording: isRecording , theme: meetScrum.themeColor)
                 
                 
                 /// FOOTER
