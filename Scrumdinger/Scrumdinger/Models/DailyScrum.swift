@@ -15,6 +15,7 @@ struct DailyScrum: Identifiable, Codable {
         }
     }
     var themeColor: Theme
+    var history: [History] = []
     
 //    aggiungo un INITIALAZER
     init(id: UUID = UUID(), title: String, attendees: [String], lengthInMinutes: Int, themeColor: Theme) {

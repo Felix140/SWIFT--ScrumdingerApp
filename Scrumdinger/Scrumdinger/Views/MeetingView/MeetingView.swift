@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct MeetingView: View {
     
     @Binding var meetScrum: DailyScrum
     @StateObject var scrumTimer = ScrumTimer() /// SOURCE OF TRUTH
+    @StateObject var speechRecognizer = SpeechRecognizer() /// SOURCE OF TRUTH
+    private var player: AVPlayer {AVPlayer.sharedDingPlayer}
     
     var body: some View {
         ZStack {
@@ -34,13 +37,30 @@ struct MeetingView: View {
         .padding()
         .foregroundColor(meetScrum.themeColor.accentColor)
         .onAppear {  /// LifeCycle Hook
-            scrumTimer.reset(lengthInMinutes: meetScrum.lengthInMinutes, attendees: meetScrum.attendees)
-            scrumTimer.startScrum()
+            startSrumm()
         }
         .onDisappear { /// LifeCycle Hook
-            scrumTimer.stopScrum()
+           endScrumm()
         }
         .navigationBarTitleDisplayMode(.inline) // Imposta la modalità di visualizzazione del titolo della barra di navigazione
+    }
+    
+    
+    /// Start LifeCycle
+    private func startSrumm() {
+        scrumTimer.reset(lengthInMinutes: meetScrum.lengthInMinutes, attendees: meetScrum.attendees)
+        scrumTimer.speakerChangedAction = {
+            player.seek(to: .zero)
+            player.play()
+        }
+
+    }
+    /// End LifeCycle
+    private func endScrumm() {
+        scrumTimer.stopScrum()
+        
+        let newHistory = History(attendees: meetScrum.attendees)
+        meetScrum.history.insert(newHistory, at: 0)
     }
 }
 
