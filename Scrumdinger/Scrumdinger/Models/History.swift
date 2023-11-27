@@ -11,15 +11,18 @@ struct History: Identifiable, Codable {
     let id: UUID ///  È un numero intero a 128 bit che viene generato in modo casuale e che è altamente improbabile che venga generato più di una volta.
     let date: Date
     var attendees: [DailyScrum.Attendee]
+    var transcript: String?
     
     init(
         id: UUID = UUID(), /// UUID() function generates a new, unique identifier for each History instance.
         date: Date = Date(), /// The DATE() function returns the current date and time.
-        attendees: [DailyScrum.Attendee])  {
+        attendees: [DailyScrum.Attendee],
+        transcript: String? = nil)  {
         
             self.id = id
             self.date = date
             self.attendees = attendees
+            self.transcript = transcript
             
     }
 }
