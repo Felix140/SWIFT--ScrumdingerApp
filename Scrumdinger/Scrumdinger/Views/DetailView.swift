@@ -17,14 +17,14 @@ struct DetailView: View {
         List {
             // INFORMAZIONI
             Section(header: Text("Informazioni")) {
-//                Start Meeting
+                //                Start Meeting
                 NavigationLink(destination: MeetingView(meetScrum: $scrum)) {
                     Label("Start Meeting", systemImage: "timer")
                         .font(.headline)
                         .foregroundColor(.accentColor)
                 }
                 
-//                Length
+                //                Length
                 HStack {
                     Label("Length", systemImage: "clock")
                     Spacer()
@@ -32,7 +32,7 @@ struct DetailView: View {
                 }
                 .accessibilityElement(children: .combine) // combine the Label and Text elements for accessibility users.
                 
-//                Theme
+                //                Theme
                 HStack {
                     Label("Theme", systemImage: "paintpalette")
                     Spacer()
@@ -49,6 +49,21 @@ struct DetailView: View {
             Section(header: Text("Partecipanti")) {
                 ForEach(scrum.attendees) { partecipante in
                     Label(partecipante.name, systemImage: "person")
+                }
+            }
+            
+            // HISTORY
+            Section(header: Text("History | Cronologia")) {
+                if scrum.history.isEmpty {
+                    Label("No meetings yet", systemImage: "calendar.badge.exclamationmark")
+                }
+                
+                ForEach(scrum.history) { elem in
+                    NavigationLink(destination: HistoryView(history: elem)) {
+                        HStack {
+                            Image(systemName: "calendar")
+                        }
+                    }
                 }
             }
         }
