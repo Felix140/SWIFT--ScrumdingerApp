@@ -106,28 +106,34 @@ actor SpeechRecognizer: ObservableObject {
     }
     
     private static func prepareEngine() throws -> (AVAudioEngine, SFSpeechAudioBufferRecognitionRequest) {
-        let audioEngine = AVAudioEngine()
-        
-        let audioSession = AVAudioSession.sharedInstance()
-        let recordingFormat = AVAudioFormat(standardFormatWithSampleRate: 44100.0, channels: 1) // Imposta il formato audio desiderato
-        try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
-        try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
-        let inputNode = audioEngine.inputNode
-        
-        //let recordingFormat = inputNode.outputFormat(forBus: 0)
-        try audioEngine.start()
-        
-        let request = SFSpeechAudioBufferRecognitionRequest()
-        request.shouldReportPartialResults = true
-        
-        inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
-            request.append(buffer)
+        do {
+            let audioEngine = AVAudioEngine()
+            
+            let audioSession = AVAudioSession.sharedInstance()
+            //let recordingFormat = AVAudioFormat(standardFormatWithSampleRate: 44100.0, channels: 1) // Imposta il formato audio desiderato
+            try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
+            try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+            let inputNode = audioEngine.inputNode
+            
+            let recordingFormat = inputNode.outputFormat(forBus: 0) /// formato per garantire che corrisponda al formato dell'inputNode.
+            try audioEngine.start()
+            
+            let request = SFSpeechAudioBufferRecognitionRequest()
+            request.shouldReportPartialResults = true
+            
+            inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
+                request.append(buffer)
+            }
+            
+            audioEngine.prepare()
+            try audioEngine.start()
+            
+            return (audioEngine, request)
+            
+        } catch {
+            print("errore")
+            throw error
         }
-        
-        audioEngine.prepare()
-        try audioEngine.start()
-        
-        return (audioEngine, request)
     }
     
     nonisolated private func recognitionHandler(audioEngine: AVAudioEngine, result: SFSpeechRecognitionResult?, error: Error?) {
