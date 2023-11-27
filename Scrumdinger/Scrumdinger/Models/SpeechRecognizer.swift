@@ -108,18 +108,22 @@ actor SpeechRecognizer: ObservableObject {
     private static func prepareEngine() throws -> (AVAudioEngine, SFSpeechAudioBufferRecognitionRequest) {
         let audioEngine = AVAudioEngine()
         
-        let request = SFSpeechAudioBufferRecognitionRequest()
-        request.shouldReportPartialResults = true
-        
         let audioSession = AVAudioSession.sharedInstance()
-        try audioSession.setCategory(.playAndRecord, mode: .measurement, options: .duckOthers)
+        let recordingFormat = AVAudioFormat(standardFormatWithSampleRate: 44100.0, channels: 1) // Imposta il formato audio desiderato
+        try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
         try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
         let inputNode = audioEngine.inputNode
         
-        let recordingFormat = inputNode.outputFormat(forBus: 0)
+        //let recordingFormat = inputNode.outputFormat(forBus: 0)
+        try audioEngine.start()
+        
+        let request = SFSpeechAudioBufferRecognitionRequest()
+        request.shouldReportPartialResults = true
+        
         inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
             request.append(buffer)
         }
+        
         audioEngine.prepare()
         try audioEngine.start()
         
